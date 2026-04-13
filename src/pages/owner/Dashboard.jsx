@@ -101,7 +101,7 @@ function Dashboard() {
                 </li>
               </ul>
 
-              {/* CONTENT */}
+              {/* CONTENT of Dashboard */}
               <div className="p-3 bg-light rounded-4 min-vh-25">
                 <Outlet />
               </div>
