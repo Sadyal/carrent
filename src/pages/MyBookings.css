@@ -1,0 +1,195 @@
+/* MyBookings.css */
+
+/* page */
+.bookings-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0E0E12, #1A1A20);
+  padding: 60px 20px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* title */
+.page-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+
+/* list */
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* card */
+.booking-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: 0.3s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* image */
+.booking-image {
+  width: 200px;
+  height: 130px;
+  border-radius: 12px;
+  overflow: hidden;
+
+  background: linear-gradient(to bottom, #ffffff, #e5e7eb);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+}
+
+/* 🔥 IMPORTANT FIX STARTS HERE */
+
+/* right side full height layout */
+.booking-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* ensure full stretch */
+}
+
+/* top */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* dates */
+.dates {
+  display: flex;
+  gap: 40px;
+  margin: 15px 0;
+}
+
+.label {
+  font-size: 12px;
+  color: #9CA3AF;
+}
+
+.dates p {
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* expandable */
+.booking-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.details-content {
+  padding-top: 10px;
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* open state */
+.booking-card.open .booking-details {
+  max-height: 200px;
+}
+
+/* 🔥 THIS FIXES BUTTON POSITION PERFECTLY */
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: auto; /* push to bottom ALWAYS */
+}
+
+/* status */
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.status.confirmed {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.status.pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.status.cancelled {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* button */
+.view-btn {
+  background: #2A2A30;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #3A3A40;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .booking-card {
+    flex-direction: column;
+  }
+
+  .booking-image {
+    width: 100%;
+    height: 160px;
+  }
+
+  .dates {
+    gap: 20px;
+    flex-direction: column;
+  }
+}

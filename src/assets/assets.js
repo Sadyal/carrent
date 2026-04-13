@@ -1,0 +1,57 @@
+export const dummyMyBooking=[
+ {
+  "_id":"b2",
+  "car":dummyCarData[1],
+  "user":"userid2",
+  "owner":"ownerid2",
+  "pickupDate":"2026-03-28",
+  "returnDate":"2026-04-05",
+  "status":"pending",
+  "price":3999,
+  "createAt":"2026-03-01"
+},
+{
+  "_id":"b3",
+  "car":dummyCarData[2],
+  "user":"userid3",
+  "owner":"ownerid3",
+  "pickupDate":"2026-04-01",
+  "returnDate":"2026-04-10",
+  "status":"confirmed",
+  "price":5999,
+  "createAt":"2026-03-05"
+},
+{
+  "_id":"b4",
+  "car":dummyCarData[3],
+  "user":"userid4",
+  "owner":"ownerid4",
+  "pickupDate":"2026-04-03",
+  "returnDate":"2026-04-15",
+  "status":"cancelled",
+  "price":4500,
+  "createAt":"2026-03-10"
+},
+{
+  "_id":"b5",
+  "car":dummyCarData[4],
+  "user":"userid5",
+  "owner":"ownerid5",
+  "pickupDate":"2026-04-06",
+  "returnDate":"2026-04-20",
+  "status":"confirmed",
+  "price":7200,
+  "createAt":"2026-03-12"
+},
+{
+  "_id":"b6",
+  "car":dummyCarData[5],
+  "user":"userid6",
+  "owner":"ownerid6",
+  "pickupDate":"2026-04-08",
+  "returnDate":"2026-04-18",
+  "status":"pending",
+  "price":5300,
+  "createAt":"2026-03-15"
+}
+]

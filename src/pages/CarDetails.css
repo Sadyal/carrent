@@ -1,0 +1,139 @@
+:root {
+  --bg-top: #44444A;
+  --bg-mid: #2A2A30;
+  --bg-bottom: #0E0E12;
+
+  --text-primary: #E5E7EB;
+  --text-secondary: #9CA3AF;
+
+  --border-soft: rgba(255, 255, 255, 0.08);
+}
+
+.car-details-page {
+  min-height: 100vh;
+  padding-top: 90px;
+
+  background: radial-gradient(
+      circle at 50% 15%,
+      rgba(255,255,255,0.04),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #0E0E12 0%,
+      #1A1A20 20%,
+      #2A2A30 50%,
+      #3A3A40 75%,
+      #44444A 100% 
+    );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD (MORE PREMIUM GLASS) */
+.car-hero {
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-soft);
+
+  /* box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9); */
+}
+
+/* IMAGE */
+.car-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.car-image-wrapper img {
+  width: 100%;
+  max-width: 520px;
+  object-fit: contain;
+
+  filter: drop-shadow(0 45px 70px rgba(0, 0, 0, 0.95));
+  transition: transform 0.4s ease;
+}
+
+.car-image-wrapper img:hover {
+  transform: scale(1.05);
+}
+
+/* TITLE */
+.car-title {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* SPECS */
+.car-specs {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spec-chip {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+
+  border: 1px solid var(--border-soft);
+  transition: 0.3s;
+}
+
+.spec-chip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* BUTTON (GREY LUXURY STYLE) */
+.book-btn {
+  margin-top: 30px;
+  padding: 12px 38px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    #2A2A30,
+    #3A3A40
+  );
+
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(
+    135deg,
+    #3A3A40,
+    #4A4A50
+  );
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* NOT FOUND */
+.not-found {
+  text-align: center;
+  margin-top: 100px;
+  color: var(--text-primary);
+}

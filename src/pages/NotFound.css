@@ -1,0 +1,49 @@
+.nf-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    to bottom,
+    #0E0E12,
+    #1A1A20,
+    #2A2A30,
+    #3A3A40
+  );
+
+  color: white;
+  text-align: center;
+}
+
+.nf-container h1 {
+  font-size: 120px;
+  margin: 0;
+  color: #6366f1;
+}
+
+.nf-container h2 {
+  margin: 10px 0;
+}
+
+.nf-container p {
+  color: rgba(255,255,255,0.6);
+}
+
+/* BUTTON */
+.nf-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.nf-btn:hover {
+  background: #1d4ed8;
+}
