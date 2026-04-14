@@ -9,7 +9,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 import { BrowserRouter } from 'react-router-dom'
 
-// reverted to previous stage
+// reverted to previous stage 
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
