@@ -5,7 +5,7 @@ function OwnerNavBar() {
   // ✅ Temporary user (since no backend yet)
   const user = {
     name: "Admin",
-    image: "https://via.placeholder.com/40"
+    image: "/images/admin.jpg"
   };
 
   return (
@@ -29,7 +29,7 @@ function OwnerNavBar() {
             {/* USER IMAGE */}
             <img
               className="profile-img"
-              src={user.image} // ✅ FIXED
+              src={user.image} 
               alt="user_profile_image"
               style={{ width: "35px", height: "35px", borderRadius: "50%" }}
             />
