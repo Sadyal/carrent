@@ -3,46 +3,6 @@ import React, { useState } from "react";
 const Login = () => {
   const [state, setState] = useState("Login");
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-
-  const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError("");
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (state === "Sign Up") {
-      if (!formData.name.trim()) {
-        return setError("Full Name is required");
-      }
-      if (formData.password.length < 6) {
-        return setError("Password must be at least 6 characters");
-      }
-      if (formData.password !== formData.confirmPassword) {
-        return setError("Passwords do not match");
-      }
-    }
-
-    console.log("Form Data:", formData);
-    // 👉 API CALL HERE
-  };
-
-  const isSignupInvalid =
-    !formData.name ||
-    !formData.email ||
-    !formData.password ||
-    !formData.confirmPassword ||
-    formData.password !== formData.confirmPassword;
-
   return (
     <>
       <style>{`
@@ -53,6 +13,7 @@ const Login = () => {
           justify-content: center;
           position: relative;
           overflow: hidden;
+
           background: linear-gradient(
             to top,
             #44444A 0%,
@@ -61,6 +22,18 @@ const Login = () => {
             #1A1A20 55%,
             #0E0E12 100%
           );
+        }
+
+        .login-wrapper::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(
+            circle at bottom center,
+            rgba(255,255,255,0.04),
+            transparent 60%
+          );
+          pointer-events: none;
         }
 
         .login-card {
@@ -73,12 +46,15 @@ const Login = () => {
           border: 1px solid rgba(255,255,255,0.08);
           box-shadow: 0 20px 60px rgba(0,0,0,0.6);
           color: #fff;
+          position: relative;
+          z-index: 2;
         }
 
         .login-title {
           font-size: 28px;
           font-weight: 600;
           text-align: center;
+          margin-bottom: 5px;
         }
 
         .login-subtitle {
@@ -90,23 +66,27 @@ const Login = () => {
 
         .login-input {
           width: 100%;
-          padding: 12px;
-          margin-bottom: 12px;
+          padding: 12px 14px;
+          margin-bottom: 15px;
           border-radius: 8px;
           border: 1px solid rgba(255,255,255,0.08);
           background: rgba(0,0,0,0.4);
           color: #fff;
           outline: none;
+          transition: 0.3s;
         }
 
         .login-input:focus {
           border-color: rgba(255,255,255,0.2);
+          background: rgba(0,0,0,0.6);
         }
 
-        .error-text {
-          color: #f87171;
+        .login-forgot {
+          text-align: right;
           font-size: 13px;
-          margin-bottom: 10px;
+          color: #60a5fa;
+          cursor: pointer;
+          margin-bottom: 15px;
         }
 
         .login-btn {
@@ -117,12 +97,11 @@ const Login = () => {
           background: linear-gradient(to right, #2563eb, #1d4ed8);
           color: #fff;
           font-weight: 500;
-          cursor: pointer;
+          transition: 0.3s;
         }
 
-        .login-btn:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
+        .login-btn:hover {
+          background: linear-gradient(to right, #1d4ed8, #1e40af);
         }
 
         .login-toggle {
@@ -137,10 +116,15 @@ const Login = () => {
           cursor: pointer;
           margin-left: 5px;
         }
+
+        .login-toggle span:hover {
+          text-decoration: underline;
+        }
       `}</style>
 
       <div className="login-wrapper">
         <div className="login-card">
+
           <div className="login-title">
             {state === "Sign Up" ? "Create Account" : "Welcome Back"}
           </div>
@@ -151,54 +135,36 @@ const Login = () => {
               : "Login to continue"}
           </div>
 
-          <form onSubmit={handleSubmit}>
+          <form>
             {state === "Sign Up" && (
               <input
                 type="text"
-                name="name"
                 placeholder="Full Name"
                 className="login-input"
-                value={formData.name}
-                onChange={handleChange}
               />
             )}
 
             <input
               type="email"
-              name="email"
               placeholder="Email"
               className="login-input"
-              value={formData.email}
-              onChange={handleChange}
+              autoComplete="off"
             />
 
             <input
               type="password"
-              name="password"
               placeholder="Password"
               className="login-input"
-              value={formData.password}
-              onChange={handleChange}
+              autoComplete="new-password"
             />
 
-            {state === "Sign Up" && (
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder="Confirm Password"
-                className="login-input"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-              />
+            {state === "Login" && (
+              <div className="login-forgot">
+                Forgot password?
+              </div>
             )}
 
-            {error && <div className="error-text">{error}</div>}
-
-            <button
-              type="submit"
-              className="login-btn"
-              disabled={state === "Sign Up" && isSignupInvalid}
-            >
+            <button className="login-btn">
               {state}
             </button>
           </form>
@@ -216,6 +182,7 @@ const Login = () => {
               </>
             )}
           </div>
+
         </div>
       </div>
     </>
