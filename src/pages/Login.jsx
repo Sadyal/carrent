@@ -157,8 +157,6 @@ const Login = () => {
               className="login-input"
               autoComplete="new-password"
             />
-
-            
             {state === "Login" && (
               <div className="login-forgot">
                 Forgot password?
