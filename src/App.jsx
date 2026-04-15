@@ -49,7 +49,6 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* ✅ ALWAYS SHOW FOOTER */}
       <Footer />
     </>
   );
