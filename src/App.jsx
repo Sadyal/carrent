@@ -15,7 +15,7 @@ import AddCar from "./pages/owner/AddCar";
 import ManageCars from "./pages/owner/ManageCars";
 import ManageBookings from "./pages/owner/ManageBookings";
 import EditCar from "./pages/owner/EditCar"; // ✅ IMPORTANT
-
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -43,8 +43,10 @@ const App = () => {
           <Route path="manage-bookings" element={<ManageBookings />} />
           <Route path="edit-car/:id" element={<EditCar />} />
 
+
         </Route>
 
+            <Route path="/contact" element={<Contact />} />
         {/* NOT FOUND */}
         <Route path="*" element={<NotFound />} />
       </Routes>
