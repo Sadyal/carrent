@@ -179,11 +179,11 @@ const Contact = () => {
           <div className="contact-info-block">
             <div className="info-item">
               <span className="info-label">Email Us</span>
-              <span className="info-value">hello@yourproject.com</span>
+              <span className="info-value">carrent@hotmail.com</span>
             </div>
             <div className="info-item">
               <span className="info-label">Call Us</span>
-              <span className="info-value">+1 (555) 000-0000</span>
+              <span className="info-value">+91 9876543210</span>
             </div>
           </div>
 
