@@ -225,9 +225,9 @@ const Contact = () => {
 
           {/* Social Links */}
           <div className="contact-socials">
-            <a href="#" className="social-link">Twitter</a>
-            <a href="#" className="social-link">LinkedIn</a>
-            <a href="#" className="social-link">Instagram</a>
+            <a href="#" className="https://x.com/sadyalnikhil/">Twitter</a>
+            <a href="#" className="https://www.linkedin.com/in/nikhil-sadyal-141036221/">LinkedIn</a>
+            <a href="#" className="https://www.instagram.com/nikhil_transition/">Instagram</a>
           </div>
 
         </div>
