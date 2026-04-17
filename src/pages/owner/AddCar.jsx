@@ -168,7 +168,8 @@ const AddCar = () => {
             </div>
           )}
 
-          {/* Description */}
+          {/* Description 
+          edited the code base*/}
           <div className="col-12">
             <label className="form-label fw-semibold">Description</label>
             <textarea
