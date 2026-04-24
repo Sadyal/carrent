@@ -3,55 +3,55 @@ export const getCars = () => {
   return [
     {
       id: 1,
-      image: "/images/c1.avif",
+      image: "images/c1.avif",
       title: "Tesla Model 3",
       specs: ["5 Seater", "Automatic", "Electric", "AC"],
     },
     {
       id: 2,
-      image: "/images/c2.avif",
+      image: "images/c2.avif",
       title: "BMW M4 Competition",
       specs: ["4 Seater", "Automatic", "Petrol", "AC"],
     },
     {
       id: 3,
-      image: "/images/c3.avif",
+      image: "images/c3.avif",
       title: "Audi R8 V10 Plus",
       specs: ["2 Seater", "Automatic", "Petrol", "AC"],
     },
     {
       id: 4,
-      image: "/images/c4.avif",
+      image: "images/c4.avif",
       title: "Mercedes Benz C-Class",
       specs: ["5 Seater", "Automatic", "Petrol", "AC"],
     },
     {
       id: 5,
-      image: "/images/c5.avif",
+      image: "images/c5.avif",
       title: "Lamborghini Huracán EVO",
       specs: ["2 Seater", "Automatic", "Petrol", "AC"],
     },
     {
       id: 6,
-      image: "/images/c6.avif",
+      image: "images/c6.avif",
       title: "Porsche Cayenne",
       specs: ["5 Seater", "Automatic", "Petrol", "Luxury"],
     },
     {
       id: 7,
-      image: "/images/c7.avif",
+      image: "images/c7.avif",
       title: "Mercedes G63 AMG",
       specs: ["5 Seater", "Automatic", "Petrol", "SUV"],
     },
     {
       id: 8,
-      image: "/images/c8.avif",
+      image: "images/c8.avif",
       title: "Range Rover Autobiography",
       specs: ["5 Seater", "Automatic", "Diesel", "Luxury"],
     },
     {
       id: 9,
-      image: "/images/c9.avif",
+      image: "images/c9.avif",
       title: "Ferrari 488 GTB",
       specs: ["2 Seater", "Automatic", "Petrol", "Supercar"],
     }
@@ -175,19 +175,19 @@ export const getFeaturedCars = () => {
   return [
     {
       id: 1,
-      image: "/images/c1.avif",
+      image: "images/c1.avif",
       title: "Porsche 911 Turbo",
       specs: ["Supercar", "2 Seats", "Petrol", "₹80000/day"],
     },
     {
       id: 2,
-      image: "/images/c2.avif",
+      image: "images/c2.avif",
       title: "Lamborghini Huracán",
       specs: ["Exotic", "2 Seats", "Petrol", "₹120000/day"],
     },
     {
       id: 3,
-      image: "/images/c3.avif",
+      image: "images/c3.avif",
       title: "Rolls Royce Phantom",
       specs: ["Ultra Luxury", "5 Seats", "Petrol", "₹200000/day"],
     },

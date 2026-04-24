@@ -13,15 +13,53 @@ const Navbar = () => {
     { path: "/about", name: "About" },
   ];
 
+  // ✅ CLOSE NAVBAR FUNCTION
+  const closeNavbar = () => {
+    const nav = document.getElementById("navMenu");
+    if (nav.classList.contains("show")) {
+      nav.classList.remove("show");
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg fixed-top custom-navbar navbar-dark bg-dark">
       <style>{`
         @media (max-width: 991px) {
-          .navbar.navbar-dark.bg-dark .navbar-collapse {
+          .navbar-collapse {
             background-color: #212529;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 10px;
+          }
+
+          .navbar-nav {
+            align-items: stretch !important;
+            gap: 10px;
+          }
+
+          .nav-item {
+            width: 100%;
+          }
+
+          .nav-link {
+            padding: 10px 0;
+          }
+
+          .nav-item input {
+            width: 100%;
+            max-width: 100% !important;
+          }
+
+          .nav-item button {
+            width: 100%;
           }
         }
-          
+
+        /* ❌ REMOVE BLUE LINE */
+        .nav-link.active {
+          border-bottom: none !important;
+          box-shadow: none !important;
+        }
       `}</style>
 
       <div className="container">
@@ -34,19 +72,18 @@ const Navbar = () => {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navMenu"
-          aria-controls="navMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navMenu">
-          <ul className="navbar-nav ms-auto gap-lg-3 align-items-lg-center text-center">
+          <ul className="navbar-nav ms-auto gap-lg-3 align-items-lg-center text-center w-100">
+            
             {links.map((link) => (
               <li className="nav-item" key={link.path}>
                 <NavLink
                   to={link.path}
+                  onClick={closeNavbar}  // ✅ FIX HERE
                   className={({ isActive }) =>
                     "nav-link px-2" + (isActive ? " active" : "")
                   }
@@ -56,6 +93,7 @@ const Navbar = () => {
               </li>
             ))}
 
+            {/* Search */}
             <li className="nav-item d-flex align-items-center my-2 my-lg-0">
               <input
                 type="text"
@@ -66,23 +104,32 @@ const Navbar = () => {
               <CiSearch className="text-white fs-5" />
             </li>
 
+            {/* Dashboard */}
             <li className="nav-item my-2 my-lg-0">
               <button
                 className="btn btn-outline-light"
-                onClick={() => navigate("/owner/dashboard")}
+                onClick={() => {
+                  navigate("/owner/dashboard");
+                  closeNavbar(); // ✅ FIX HERE
+                }}
               >
                 Dashboard
               </button>
             </li>
 
+            {/* Login */}
             <li className="nav-item my-2 my-lg-0">
               <button
                 className="btn btn-primary"
-                onClick={() => navigate("/login")}
+                onClick={() => {
+                  navigate("/login");
+                  closeNavbar(); // ✅ FIX HERE
+                }}
               >
                 Login
               </button>
             </li>
+
           </ul>
         </div>
       </div>

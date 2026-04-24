@@ -22,11 +22,12 @@
   width: 100%;
   z-index: 1;
   color: #44444ace;
+  padding: 0 15px;
 }
 
 .hero-text h1 {
   font-family: "Cinzel", serif;
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(2rem, 8vw, 7rem);
   font-weight: 800;
   letter-spacing: 0.15em;
 }
@@ -34,7 +35,7 @@
 .hero-text p {
   margin-top: 10px;
   font-family: "Cinzel", serif;
-  font-size: 1.1rem;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.25);
 }
@@ -42,7 +43,7 @@
 /* CAR */
 .porshe {
   position: absolute;
-  bottom: 45px;
+  bottom: 30px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -61,36 +62,32 @@
   padding: 40px 20px 20px;
 }
 
-/* container */
 .booking-container {
   max-width: 1100px;
   margin: auto;
-  background: #3A3A40; /* solid, no transparency */
+  background: #3A3A40;
   padding: 25px;
   border-radius: 16px;
   display: flex;
-  align-items: flex-end; /* align bottom properly */
+  align-items: flex-end;
   gap: 20px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
-/* field */
 .booking-field {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-/* label */
 .booking-field label {
   font-size: 0.8rem;
   color: rgba(255,255,255,0.7);
   margin-bottom: 6px;
 }
 
-/* input */
 .booking-field input {
-  height: 45px; /* FIX: consistent height */
+  height: 45px;
   padding: 0 12px;
   border-radius: 10px;
   border: none;
@@ -100,14 +97,12 @@
   font-size: 0.9rem;
 }
 
-/* fix date icon visibility */
 .booking-field input[type="date"] {
   color-scheme: dark;
 }
 
-/* button */
 .booking-btn {
-  height: 45px; /* match input height */
+  height: 45px;
   padding: 0 20px;
   border-radius: 10px;
   border: none;
@@ -123,54 +118,32 @@
   background: #111;
 }
 
-/* responsive */
-@media (max-width: 768px) {
-  .booking-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .booking-btn {
-    width: 100%;
-  }
-}
-
 /* FEATURED SECTION */
 .featured-section {
-  padding: 100px 40px 80px;
+  padding: 80px 20px;
   background: #44444A;
   text-align: center;
 }
 
-/* heading */
 .featured-title {
   font-family: "Cinzel", serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 10px;
 }
 
-/* subtitle */
 .featured-subtitle {
   color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   letter-spacing: 0.08em;
 }
 
-/* ✅ ADD THIS (missing grid = main issue) */
+/* GRID */
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
-  max-width: 1200px;
-  margin: auto;
-}
-/* GRID (keep it clean) */
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 25px;
   max-width: 1200px;
   margin: auto;
 }
@@ -179,28 +152,24 @@
 .featured-grid > * {
   background: #3A3A40;
   border-radius: 16px;
-  padding: 30px 20px 25px; /* FIXED: removed extra top padding */
+  padding: 25px 15px;
   text-align: center;
   border: 1px solid rgba(255,255,255,0.2);
   transition: all 0.3s ease;
 }
 
-/* IMAGE FIX (NOT floating too high anymore) */
 .featured-grid img {
-  position: static; /* ✅ REMOVE absolute positioning */
   width: 85%;
   max-width: 260px;
   margin-bottom: 15px;
 }
 
-/* TITLE */
 .featured-grid h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #fff;
   margin-bottom: 10px;
 }
 
-/* SPECS */
 .featured-grid .rent-specs {
   margin: 10px 0 18px;
   display: flex;
@@ -212,12 +181,11 @@
 .featured-grid .rent-specs span {
   background: #555;
   color: #fff;
-  padding: 6px 12px;
+  padding: 6px 10px;
   border-radius: 10px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
-/* BUTTONS */
 .featured-grid .btn-container {
   display: flex;
   gap: 10px;
@@ -230,45 +198,44 @@
   border: none;
 }
 
-/* HOVER */
 .featured-grid > *:hover {
   transform: translateY(-6px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
+
+/* REVIEWS */
 .reviews-section {
   background: #44444A;
-  padding: 80px 40px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .reviews-title {
   font-family: "Cinzel", serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #fff;
-  margin-bottom: 50px;
-  letter-spacing: 0.1em;
+  margin-bottom: 40px;
 }
 
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 20px;
   max-width: 1200px;
   margin: auto;
 }
 
 .review-card {
   background: #3A3A40;
-  padding: 25px;
+  padding: 20px;
   border-radius: 14px;
   text-align: left;
-  transition: all 0.3s ease;
 }
 
 .review-user {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   margin-bottom: 15px;
 }
 
@@ -279,34 +246,76 @@
   object-fit: cover;
 }
 
-.review-user h4 {
-  color: #fff;
-  margin: 0;
-}
-
-.review-user span {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
-}
-
 .review-card p {
-  color: rgba(255,255,255,0.85);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
 }
 
-.review-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.4);
-}
+/* ========================= */
+/* ✅ RESPONSIVE FIXES */
+/* ========================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .reviews-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .hero-text {
+    top: 18%;
+  }
+
+  /* ✅ FIX START (MAIN CHANGE) */
+  .front {
+    overflow: visible;       /* allow car visible */
+    padding-bottom: 120px;   /* space for car */
+  }
+
+  .porshe {
+    bottom: -20px;           /* lift car */
+  }
+
+  .porshe img {
+    width: 90%;
+  }
+  /* ✅ FIX END */
+
+  .booking-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .booking-btn {
+    width: 100%;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    letter-spacing: 0.1em;
+  }
+
+  /* stronger adjustment for small phones */
+  .front {
+    padding-bottom: 140px;
+  }
+
+  .porshe {
+    bottom: 155px;
+  }
+
+  .porshe img {
+    width: 95%;
+  }
+
   .reviews-grid {
     grid-template-columns: 1fr;
   }

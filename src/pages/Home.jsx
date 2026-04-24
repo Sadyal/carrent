@@ -15,7 +15,7 @@ const Home = () => {
         </div>
 
         <div className="porshe">
-          <img src="/images/porshe.avif" alt="car" />
+          <img src="images/porshe.avif" alt="car" />
         </div>
       </div>
 
@@ -65,7 +65,7 @@ const Home = () => {
 
           <div className="review-card">
             <div className="review-user">
-              <img src="/images/customer-1.jpg" alt="user" />
+              <img src="images/customer-1.jpg" alt="user" />
               <div>
                 <h4>Elon Musk</h4>
                 <span>Delhi</span>
@@ -78,7 +78,7 @@ const Home = () => {
 
           <div className="review-card">
             <div className="review-user">
-              <img src="/images/customer-2.jpg" alt="user" />
+              <img src="images/customer-2.jpg" alt="user" />
               <div>
                 <h4>Zukeburg</h4>
                 <span>Mumbai</span>
@@ -91,7 +91,7 @@ const Home = () => {
 
           <div className="review-card">
             <div className="review-user">
-              <img src="/images/customer-3.jpg" alt="user" />
+              <img src="images/customer-3.jpg" alt="user" />
               <div>
                 <h4>Bill Gates</h4>
                 <span>Bangalore</span>
@@ -104,7 +104,7 @@ const Home = () => {
 
           <div className="review-card">
             <div className="review-user">
-              <img src="/images/customer-4.jpg" alt="user" />
+              <img src="images/customer-4.jpg" alt="user" />
               <div>
                 <h4>Tim Cook</h4>
                 <span>Pune</span>
