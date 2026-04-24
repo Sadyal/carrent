@@ -1,4 +1,4 @@
-/* FULL PAGE */
+/* Main landing section with gradient background */
 .front {
   min-height: 95vh;
   position: relative;
@@ -15,7 +15,7 @@
   );
 }
 
-/* TEXT */
+/* Hero text positioning and styling */
 .hero-text {
   position: absolute;
   top: 25%;
@@ -40,7 +40,7 @@
   color: rgba(255, 255, 255, 0.25);
 }
 
-/* CAR */
+/* Car image section */
 .porshe {
   position: absolute;
   bottom: 30px;
@@ -56,7 +56,7 @@
   height: auto;
 }
 
-/* BOOKING BAR */
+/* Booking bar container */
 .booking-bar {
   background: #44444A;
   padding: 40px 20px 20px;
@@ -74,6 +74,7 @@
   box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
+/* Input fields */
 .booking-field {
   display: flex;
   flex-direction: column;
@@ -101,6 +102,7 @@
   color-scheme: dark;
 }
 
+/* Booking button */
 .booking-btn {
   height: 45px;
   padding: 0 20px;
@@ -118,7 +120,7 @@
   background: #111;
 }
 
-/* FEATURED SECTION */
+/* Featured section layout */
 .featured-section {
   padding: 80px 20px;
   background: #44444A;
@@ -139,7 +141,7 @@
   letter-spacing: 0.08em;
 }
 
-/* GRID */
+/* Grid for car cards */
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -148,7 +150,7 @@
   margin: auto;
 }
 
-/* CARD */
+/* Individual card styling */
 .featured-grid > * {
   background: #3A3A40;
   border-radius: 16px;
@@ -170,6 +172,7 @@
   margin-bottom: 10px;
 }
 
+/* Specs badges */
 .featured-grid .rent-specs {
   margin: 10px 0 18px;
   display: flex;
@@ -186,6 +189,7 @@
   font-size: 0.75rem;
 }
 
+/* Buttons inside cards */
 .featured-grid .btn-container {
   display: flex;
   gap: 10px;
@@ -198,12 +202,13 @@
   border: none;
 }
 
+/* Hover effect */
 .featured-grid > *:hover {
   transform: translateY(-6px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
-/* REVIEWS */
+/* Reviews section */
 .reviews-section {
   background: #44444A;
   padding: 60px 20px;
@@ -217,6 +222,7 @@
   margin-bottom: 40px;
 }
 
+/* Reviews grid layout */
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -225,6 +231,7 @@
   margin: auto;
 }
 
+/* Individual review card */
 .review-card {
   background: #3A3A40;
   padding: 20px;
@@ -232,6 +239,7 @@
   text-align: left;
 }
 
+/* User info inside review */
 .review-user {
   display: flex;
   align-items: center;
@@ -239,6 +247,7 @@
   margin-bottom: 15px;
 }
 
+/* Fix for image distortion (keeps circle without stretching) */
 .review-user img {
   width: 60px;
   height: 60px;
@@ -250,10 +259,7 @@
   font-size: 0.9rem;
 }
 
-/* ========================= */
-/* ✅ RESPONSIVE FIXES */
-/* ========================= */
-
+/* Tablet adjustments */
 @media (max-width: 1024px) {
   .featured-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -264,25 +270,24 @@
   }
 }
 
+/* Mobile layout fixes */
 @media (max-width: 768px) {
   .hero-text {
     top: 18%;
   }
 
-  /* ✅ FIX START (MAIN CHANGE) */
   .front {
-    overflow: visible;       /* allow car visible */
-    padding-bottom: 120px;   /* space for car */
+    overflow: visible;
+    padding-bottom: 120px;
   }
 
   .porshe {
-    bottom: -20px;           /* lift car */
+    bottom: -20px;
   }
 
   .porshe img {
     width: 90%;
   }
-  /* ✅ FIX END */
 
   .booking-container {
     flex-direction: column;
@@ -298,12 +303,12 @@
   }
 }
 
+/* Small phone adjustments */
 @media (max-width: 480px) {
   .hero-text h1 {
     letter-spacing: 0.1em;
   }
 
-  /* stronger adjustment for small phones */
   .front {
     padding-bottom: 140px;
   }
