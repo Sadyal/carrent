@@ -5,7 +5,7 @@ function OwnerNavBar() {
   // ✅ Temporary user (since no backend yet)
   const user = {
     name: "Admin",
-    image: "/images/admin.jpg"
+    image: "images/admin.jpg"
   };
 
   return (
@@ -36,7 +36,7 @@ function OwnerNavBar() {
 
             {/* USER NAME */}
             <div className="text-light">
-              Welcome, {user.name} {/* ✅ FIXED */}
+              Welcome, {user.name}
             </div>
 
           </div>
