@@ -28,7 +28,7 @@ function ManageCars() {
           <div className="col-md-6 col-lg-6" key={car.id}>
             <div className="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
 
-              {/* IMAGE (FIXED) */}
+              {/* IMAGE (FIXED FOR DASHBOARD) */}
               <div
                 style={{
                   height: "180px",
@@ -39,7 +39,7 @@ function ManageCars() {
                 }}
               >
                 <img
-                  src={car.image}
+                  src={`/carrent/${car.image}`}   // ✅ FIXED HERE
                   alt={car.title}
                   style={{
                     maxHeight: "100%",
@@ -51,7 +51,6 @@ function ManageCars() {
 
               {/* BODY */}
               <div className="card-body">
-
                 <h6 className="fw-bold mb-2">{car.title}</h6>
 
                 <p className="text-muted small mb-2">
@@ -75,12 +74,13 @@ function ManageCars() {
                     Delete
                   </button>
                 </div>
-
               </div>
+
             </div>
           </div>
         ))}
       </div>
+
       {/* SHOW MORE */}
       {carNumber < cars.length && (
         <div className="text-center mt-4">
