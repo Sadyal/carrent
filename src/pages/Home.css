@@ -325,3 +325,12 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 768px) {
+  .booking-field {
+    width: 100%;
+  }
+
+  .booking-field input {
+    width: 100%;
+  }
+}
