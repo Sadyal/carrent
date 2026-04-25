@@ -81,7 +81,6 @@ function ManageCars() {
           </div>
         ))}
       </div>
-
       {/* SHOW MORE */}
       {carNumber < cars.length && (
         <div className="text-center mt-4">
