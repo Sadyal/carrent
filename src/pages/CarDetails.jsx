@@ -10,8 +10,12 @@ const CarDetails = () => {
   return (
     <div className="car-details-page">
       <div className="car-hero">
+        
         <div className="car-image-wrapper">
-          <img src={car.image} alt={car.title} />
+          <img 
+            src={`/carrent/${car.image}`}  
+            alt={car.title} 
+          />
         </div>
 
         <h1 className="car-title">{car.title}</h1>
