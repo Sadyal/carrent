@@ -3,6 +3,6 @@ export const getCurrentUser = () => {
     id: "u1",
     name: "Sadyal",
     role: "Owner",
-    image: "images/admin.jpg",
+    image: "/carrent/images/admin.jpg",  
   };
 };

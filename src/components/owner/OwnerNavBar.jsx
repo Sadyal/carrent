@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"; // ✅ FIXED
+import { NavLink } from "react-router-dom";
 import { MdCarRental } from "react-icons/md";
 
 function OwnerNavBar() {
@@ -29,7 +29,7 @@ function OwnerNavBar() {
             {/* USER IMAGE */}
             <img
               className="profile-img"
-              src={user.image} 
+              src={`/carrent/${user.image}`}   // ✅ FIXED HERE
               alt="user_profile_image"
               style={{ width: "35px", height: "35px", borderRadius: "50%" }}
             />
