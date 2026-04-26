@@ -1,206 +1,224 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <style>{`
-        .about-wrapper {
+        .about {
           min-height: 100vh;
-          padding: 60px 20px;
-          background: linear-gradient(
-            to bottom,
-            #0E0E12,
-            #1A1A20
-          );
+          padding: 40px 16px;
+          background: linear-gradient(to bottom, #0E0E12, #1A1A20);
           color: #fff;
           font-family: "Poppins", sans-serif;
         }
 
-        .about-container {
+        .container {
           max-width: 1100px;
           margin: auto;
         }
 
-        .about-title {
-          font-size: 36px;
-          font-weight: 600;
-          margin-bottom: 10px;
-        }
-
-        .about-subtitle {
-          color: #9CA3AF;
+        /* HERO */
+        .hero {
+          text-align: center;
           margin-bottom: 40px;
         }
 
-        .about-section {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-          margin-bottom: 50px;
+        .hero h1 {
+          font-size: 28px;
+          font-weight: 600;
         }
 
-        .about-card {
-          padding: 25px;
-          border-radius: 16px;
+        .hero p {
+          font-size: 14px;
+          color: #9CA3AF;
+          margin-top: 10px;
+        }
+
+        /* GRID */
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+          margin-top: 25px;
+        }
+
+        .card {
+          padding: 18px;
+          border-radius: 14px;
           background: rgba(255,255,255,0.04);
-          backdrop-filter: blur(12px);
           border: 1px solid rgba(255,255,255,0.08);
+          backdrop-filter: blur(10px);
           transition: 0.3s;
         }
 
-        .about-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        .card:hover {
+          transform: translateY(-3px);
         }
 
-        .about-card h3 {
-          margin-bottom: 10px;
-          font-size: 20px;
+        .card h3 {
+          font-size: 15px;
+          margin-bottom: 6px;
         }
 
-        .about-card p {
-          color: #d1d5db;
-          line-height: 1.6;
-          font-size: 14px;
+        .card p {
+          font-size: 12px;
+          color: #9CA3AF;
         }
 
-        .highlight {
-          color: #60a5fa;
-          font-weight: 500;
-        }
-
+        /* FEATURE STRIP */
         .features {
           display: flex;
-          gap: 20px;
-          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: 25px;
+          overflow-x: auto;
         }
 
-        .feature-box {
-          flex: 1;
-          min-width: 220px;
-          padding: 20px;
+        .feature {
+          min-width: 160px;
+          padding: 14px;
           border-radius: 12px;
           background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,255,255,0.08);
         }
 
-        .feature-box h4 {
-          margin-bottom: 8px;
+        .feature h4 {
+          font-size: 13px;
         }
 
-        .feature-box p {
-          font-size: 13px;
+        .feature p {
+          font-size: 11px;
           color: #9CA3AF;
         }
 
+        /* STATS */
         .stats {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 40px;
-          flex-wrap: wrap;
-          gap: 20px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+          margin-top: 30px;
         }
 
         .stat {
           text-align: center;
-          flex: 1;
-          min-width: 120px;
+          padding: 15px;
+          border-radius: 12px;
+          background: rgba(255,255,255,0.03);
         }
 
         .stat h2 {
-          font-size: 28px;
+          font-size: 20px;
           color: #60a5fa;
         }
 
         .stat p {
-          font-size: 13px;
+          font-size: 11px;
           color: #9CA3AF;
         }
 
-        @media (max-width: 768px) {
-          .about-section {
-            grid-template-columns: 1fr;
+        /* CTA */
+        .cta {
+          margin-top: 40px;
+          text-align: center;
+        }
+
+        .cta button {
+          padding: 12px 20px;
+          border-radius: 8px;
+          border: none;
+          background: #2563eb;
+          color: #fff;
+          font-size: 14px;
+          cursor: pointer;
+        }
+
+        .cta button:hover {
+          background: #1d4ed8;
+        }
+
+        /* DESKTOP */
+        @media (min-width: 768px) {
+          .hero h1 {
+            font-size: 36px;
+          }
+
+          .grid {
+            grid-template-columns: repeat(4, 1fr);
           }
 
           .stats {
-            flex-direction: column;
-            align-items: center;
+            grid-template-columns: repeat(4, 1fr);
           }
         }
       `}</style>
 
-      <div className="about-wrapper">
-        <div className="about-container">
+      <div className="about">
+        <div className="container">
 
-          <h1 className="about-title">About CarRent</h1>
-          <p className="about-subtitle">
-            Premium luxury car rental experience designed for comfort, performance, and class.
-          </p>
-
-          {/* SECTION 1 */}
-          <div className="about-section">
-
-            <div className="about-card">
-              <h3>🚘 Who We Are</h3>
-              <p>
-                CarRent is a <span className="highlight">premium car rental platform</span> built
-                for users who want more than just transportation. We focus on
-                delivering <span className="highlight">luxury, performance, and seamless booking experience</span>.
-              </p>
-            </div>
-
-            <div className="about-card">
-              <h3>🎯 Our Mission</h3>
-              <p>
-                Our mission is to make luxury accessible by providing
-                <span className="highlight"> high-end vehicles at competitive prices</span>,
-                combined with <span className="highlight">instant booking and reliability</span>.
-              </p>
-            </div>
-
+          {/* HERO */}
+          <div className="hero">
+            <h1>Luxury Cars. Zero Hassle.</h1>
+            <p>Drive premium. Book instantly. Experience class.</p>
           </div>
 
-          {/* FEATURES */}
+          {/* CORE BLOCKS */}
+          <div className="grid">
+            <div className="card">
+              <h3>🚘 Premium Fleet</h3>
+              <p>BMW, Audi, Porsche — top-tier selection.</p>
+            </div>
+
+            <div className="card">
+              <h3>⚡ Instant Booking</h3>
+              <p>No calls. No delays. Just book.</p>
+            </div>
+
+            <div className="card">
+              <h3>🛡 Verified Cars</h3>
+              <p>Fully checked & maintained vehicles.</p>
+            </div>
+
+            <div className="card">
+              <h3>📍 Flexible Pickup</h3>
+              <p>Choose your location & timing.</p>
+            </div>
+          </div>
+
+          {/* FEATURES STRIP */}
           <div className="features">
-
-            <div className="feature-box">
-              <h4>⚡ Instant Booking</h4>
-              <p>Book your dream car in seconds with a smooth UI.</p>
+            <div className="feature">
+              <h4>24/7 Support</h4>
+              <p>Always available</p>
             </div>
 
-            <div className="feature-box">
-              <h4>🏎 Premium Cars</h4>
-              <p>Access luxury brands like BMW, Audi, Porsche.</p>
+            <div className="feature">
+              <h4>Best Pricing</h4>
+              <p>No hidden charges</p>
             </div>
 
-            <div className="feature-box">
-              <h4>🛡 Safe & Secure</h4>
-              <p>Verified vehicles and secure payment system.</p>
+            <div className="feature">
+              <h4>Easy Returns</h4>
+              <p>Simple drop-off system</p>
             </div>
 
-            <div className="feature-box">
-              <h4>📍 Multiple Locations</h4>
-              <p>Available across major cities in India.</p>
+            <div className="feature">
+              <h4>Driver Option</h4>
+              <p>Available on demand</p>
             </div>
-
           </div>
 
           {/* STATS */}
           <div className="stats">
-
             <div className="stat">
               <h2>500+</h2>
-              <p>Cars Available</p>
+              <p>Cars</p>
             </div>
 
             <div className="stat">
               <h2>10K+</h2>
-              <p>Happy Customers</p>
-            </div>
-
-            <div className="stat">
-              <h2>24/7</h2>
-              <p>Support</p>
+              <p>Users</p>
             </div>
 
             <div className="stat">
@@ -208,6 +226,17 @@ const About = () => {
               <p>Cities</p>
             </div>
 
+            <div className="stat">
+              <h2>4.9★</h2>
+              <p>Rating</p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="cta">
+            <button onClick={() => navigate("/cars")}>
+              Explore Cars →
+            </button>
           </div>
 
         </div>
