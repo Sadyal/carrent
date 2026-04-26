@@ -16,6 +16,7 @@ import ManageCars from "./pages/owner/ManageCars";
 import ManageBookings from "./pages/owner/ManageBookings";
 import EditCar from "./pages/owner/EditCar"; // ✅ IMPORTANT
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
         </Route>
 
             <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
         {/* NOT FOUND */}
         <Route path="*" element={<NotFound />} />
       </Routes>
