@@ -9,10 +9,10 @@ const About = () => {
       <style>{`
         .about {
           min-height: 100vh;
-          padding: 40px 16px;
-          background: linear-gradient(to bottom, #0E0E12, #1A1A20);
+          background: radial-gradient(circle at top, #1f2937, #0E0E12 60%);
           color: #fff;
           font-family: "Poppins", sans-serif;
+          padding: 60px 20px;
         }
 
         .container {
@@ -22,134 +22,113 @@ const About = () => {
 
         /* HERO */
         .hero {
-          text-align: center;
-          margin-bottom: 40px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin-bottom: 60px;
         }
 
         .hero h1 {
-          font-size: 28px;
+          font-size: 34px;
           font-weight: 600;
+          line-height: 1.2;
         }
 
         .hero p {
-          font-size: 14px;
           color: #9CA3AF;
-          margin-top: 10px;
+          max-width: 500px;
         }
 
-        /* GRID */
-        .grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 15px;
-          margin-top: 25px;
-        }
-
-        .card {
-          padding: 18px;
-          border-radius: 14px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          backdrop-filter: blur(10px);
-          transition: 0.3s;
-        }
-
-        .card:hover {
-          transform: translateY(-3px);
-        }
-
-        .card h3 {
-          font-size: 15px;
-          margin-bottom: 6px;
-        }
-
-        .card p {
-          font-size: 12px;
-          color: #9CA3AF;
-        }
-
-        /* FEATURE STRIP */
-        .features {
-          display: flex;
-          gap: 10px;
-          margin-top: 25px;
-          overflow-x: auto;
-        }
-
-        .feature {
-          min-width: 160px;
-          padding: 14px;
-          border-radius: 12px;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .feature h4 {
-          font-size: 13px;
-        }
-
-        .feature p {
-          font-size: 11px;
-          color: #9CA3AF;
-        }
-
-        /* STATS */
-        .stats {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 15px;
-          margin-top: 30px;
-        }
-
-        .stat {
-          text-align: center;
-          padding: 15px;
-          border-radius: 12px;
-          background: rgba(255,255,255,0.03);
-        }
-
-        .stat h2 {
-          font-size: 20px;
-          color: #60a5fa;
-        }
-
-        .stat p {
-          font-size: 11px;
-          color: #9CA3AF;
-        }
-
-        /* CTA */
-        .cta {
-          margin-top: 40px;
-          text-align: center;
-        }
-
-        .cta button {
+        .hero button {
+          width: fit-content;
           padding: 12px 20px;
           border-radius: 8px;
           border: none;
           background: #2563eb;
           color: #fff;
-          font-size: 14px;
           cursor: pointer;
         }
 
-        .cta button:hover {
+        .hero button:hover {
           background: #1d4ed8;
         }
 
-        /* DESKTOP */
-        @media (min-width: 768px) {
-          .hero h1 {
-            font-size: 36px;
+        /* FEATURE ROWS */
+        .features {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+        }
+
+        .feature {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px;
+          border-radius: 16px;
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .feature-left {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+        }
+
+        .icon {
+          font-size: 22px;
+        }
+
+        .feature-text h3 {
+          font-size: 16px;
+        }
+
+        .feature-text p {
+          font-size: 13px;
+          color: #9CA3AF;
+        }
+
+        /* STATS */
+        .stats {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 50px;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+
+        .stat {
+          flex: 1;
+          min-width: 120px;
+          text-align: center;
+        }
+
+        .stat h2 {
+          color: #60a5fa;
+        }
+
+        .stat p {
+          font-size: 12px;
+          color: #9CA3AF;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+          .hero {
+            text-align: center;
+            align-items: center;
           }
 
-          .grid {
-            grid-template-columns: repeat(4, 1fr);
+          .feature {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
           }
 
           .stats {
-            grid-template-columns: repeat(4, 1fr);
+            flex-direction: column;
+            align-items: center;
           }
         }
       `}</style>
@@ -159,54 +138,60 @@ const About = () => {
 
           {/* HERO */}
           <div className="hero">
-            <h1>Luxury Cars. Zero Hassle.</h1>
-            <p>Drive premium. Book instantly. Experience class.</p>
+            <h1>Drive Luxury Without Compromise</h1>
+            <p>
+              Experience premium cars with zero friction. Built for speed,
+              comfort, and effortless booking.
+            </p>
+
+            <button onClick={() => navigate("/cars")}>
+              Browse Cars →
+            </button>
           </div>
 
-          {/* CORE BLOCKS */}
-          <div className="grid">
-            <div className="card">
-              <h3>🚘 Premium Fleet</h3>
-              <p>BMW, Audi, Porsche — top-tier selection.</p>
-            </div>
-
-            <div className="card">
-              <h3>⚡ Instant Booking</h3>
-              <p>No calls. No delays. Just book.</p>
-            </div>
-
-            <div className="card">
-              <h3>🛡 Verified Cars</h3>
-              <p>Fully checked & maintained vehicles.</p>
-            </div>
-
-            <div className="card">
-              <h3>📍 Flexible Pickup</h3>
-              <p>Choose your location & timing.</p>
-            </div>
-          </div>
-
-          {/* FEATURES STRIP */}
+          {/* FEATURES */}
           <div className="features">
+
             <div className="feature">
-              <h4>24/7 Support</h4>
-              <p>Always available</p>
+              <div className="feature-left">
+                <div className="icon">🚘</div>
+                <div className="feature-text">
+                  <h3>Premium Collection</h3>
+                  <p>Top brands like BMW, Audi, Porsche</p>
+                </div>
+              </div>
             </div>
 
             <div className="feature">
-              <h4>Best Pricing</h4>
-              <p>No hidden charges</p>
+              <div className="feature-left">
+                <div className="icon">⚡</div>
+                <div className="feature-text">
+                  <h3>Instant Booking</h3>
+                  <p>No waiting. Book in seconds</p>
+                </div>
+              </div>
             </div>
 
             <div className="feature">
-              <h4>Easy Returns</h4>
-              <p>Simple drop-off system</p>
+              <div className="feature-left">
+                <div className="icon">🛡</div>
+                <div className="feature-text">
+                  <h3>Verified Vehicles</h3>
+                  <p>Every car is inspected & maintained</p>
+                </div>
+              </div>
             </div>
 
             <div className="feature">
-              <h4>Driver Option</h4>
-              <p>Available on demand</p>
+              <div className="feature-left">
+                <div className="icon">📍</div>
+                <div className="feature-text">
+                  <h3>Flexible Pickup</h3>
+                  <p>Choose time & location freely</p>
+                </div>
+              </div>
             </div>
+
           </div>
 
           {/* STATS */}
@@ -230,13 +215,6 @@ const About = () => {
               <h2>4.9★</h2>
               <p>Rating</p>
             </div>
-          </div>
-
-          {/* CTA */}
-          <div className="cta">
-            <button onClick={() => navigate("/cars")}>
-              Explore Cars →
-            </button>
           </div>
 
         </div>
