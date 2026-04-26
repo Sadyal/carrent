@@ -16,8 +16,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here (e.g., API call)
-    console.log("Form submitted:", formData);
     alert("Message sent successfully!");
     setFormData({ name: "", email: "", message: "" });
   };
@@ -25,209 +23,207 @@ const Contact = () => {
   return (
     <>
       <style>{`
-        .contact-wrapper {
+        .contact {
           min-height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          overflow: hidden;
+          padding: 80px 20px;
 
           background: linear-gradient(
-            to top,
-            #44444A 0%,
-            #3A3A40 15%,
-            #2A2A30 30%,
-            #1A1A20 55%,
-            #0E0E12 100%
+            to bottom,
+            #0E0E12 0%,
+            #1A1A20 60%,
+            #2A2A30 75%,
+            #3A3A40 90%,
+            #44444A 100%
           );
-          padding: 20px;
-        }
 
-        .contact-wrapper::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(
-            circle at bottom center,
-            rgba(255,255,255,0.04),
-            transparent 60%
-          );
-          pointer-events: none;
-        }
-
-        .contact-card {
-          width: 100%;
-          max-width: 480px;
-          padding: 40px;
-          border-radius: 16px;
-          background: rgba(0, 0, 0, 0.6);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255,255,255,0.08);
-          box-shadow: 0 20px 60px rgba(0,0,0,0.6);
           color: #fff;
-          position: relative;
-          z-index: 2;
+          font-family: "Poppins", sans-serif;
         }
 
-        .contact-title {
-          font-size: 28px;
-          font-weight: 600;
+        .container {
+          max-width: 1100px;
+          margin: auto;
+        }
+
+        /* HEADER */
+        .header {
           text-align: center;
-          margin-bottom: 5px;
+          margin-bottom: 50px;
         }
 
-        .contact-subtitle {
-          text-align: center;
-          font-size: 14px;
-          color: #9ca3af;
-          margin-bottom: 25px;
+        .header h1 {
+          font-family: "Cinzel", serif;
+          letter-spacing: 0.1em;
         }
 
-        .contact-info-block {
-          display: flex;
-          justify-content: space-around;
-          margin-bottom: 30px;
-          padding-bottom: 20px;
-          border-bottom: 1px solid rgba(255,255,255,0.08);
+        .header p {
+          color: rgba(255,255,255,0.5);
+          margin-top: 8px;
+        }
+
+        /* LAYOUT */
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 30px;
+        }
+
+        /* INFO BOX */
+        .info-box {
+          background: #3A3A40;
+          padding: 30px;
+          border-radius: 16px;
+          border: 1px solid rgba(255,255,255,0.15);
         }
 
         .info-item {
-          text-align: center;
+          margin-bottom: 25px;
         }
 
-        .info-label {
-          display: block;
-          font-size: 12px;
-          color: #60a5fa;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 6px;
-          font-weight: 600;
+        .info-item h4 {
+          margin-bottom: 5px;
         }
 
-        .info-value {
-          font-size: 14px;
-          color: #e5e7eb;
+        .info-item p {
+          color: rgba(255,255,255,0.6);
         }
 
-        .contact-input {
+        /* FORM */
+        .form-box {
+          background: #3A3A40;
+          padding: 30px;
+          border-radius: 16px;
+          border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .form-box input,
+        .form-box textarea {
           width: 100%;
-          padding: 12px 14px;
           margin-bottom: 15px;
-          border-radius: 8px;
-          border: 1px solid rgba(255,255,255,0.08);
-          background: rgba(0,0,0,0.4);
+          padding: 12px;
+          border-radius: 10px;
+          border: none;
+          background: #2A2A30;
           color: #fff;
           outline: none;
-          transition: 0.3s;
-          font-family: inherit;
         }
 
-        .contact-textarea {
-          resize: vertical;
-          min-height: 100px;
+        .form-box textarea {
+          min-height: 120px;
+          resize: none;
         }
 
-        .contact-input:focus {
-          border-color: rgba(255,255,255,0.2);
-          background: rgba(0,0,0,0.6);
-        }
-
-        .contact-btn {
+        .form-box button {
           width: 100%;
           padding: 12px;
-          border-radius: 8px;
+          border-radius: 10px;
           border: none;
-          background: linear-gradient(to right, #2563eb, #1d4ed8);
+          background: #000;
           color: #fff;
-          font-weight: 500;
-          transition: 0.3s;
+          font-weight: 600;
           cursor: pointer;
-          margin-top: 5px;
+          transition: 0.3s;
         }
 
-        .contact-btn:hover {
-          background: linear-gradient(to right, #1d4ed8, #1e40af);
+        .form-box button:hover {
+          background: #111;
         }
-        
-        .contact-socials {
+
+        /* SOCIAL */
+        .socials {
+          margin-top: 20px;
           display: flex;
-          justify-content: center;
-          gap: 20px;
-          margin-top: 25px;
+          gap: 15px;
         }
 
-        .social-link {
-          color: #9ca3af;
+        .socials a {
           font-size: 14px;
+          color: rgba(255,255,255,0.6);
           text-decoration: none;
-          transition: color 0.3s;
         }
 
-        .social-link:hover {
+        .socials a:hover {
           color: #fff;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+          .contact-grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
 
-      <div className="contact-wrapper">
-        <div className="contact-card">
-          <div className="contact-title">Get in Touch</div>
-          <div className="contact-subtitle">We would love to hear from you</div>
+      <div className="contact">
+        <div className="container">
 
-          {/* Contact Details Section */}
-          <div className="contact-info-block">
-            <div className="info-item">
-              <span className="info-label">Email Us</span>
-              <span className="info-value">carrent@hotmail.com</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Call Us</span>
-              <span className="info-value">+91 9876543210</span>
-            </div>
+          {/* HEADER */}
+          <div className="header">
+            <h1>CONTACT US</h1>
+            <p>We’re here to help you anytime</p>
           </div>
 
-          {/* Contact Form Session */}
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Full Name"
-              className="contact-input"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+          <div className="contact-grid">
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email Address"
-              className="contact-input"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+            {/* LEFT INFO */}
+            <div className="info-box">
 
-            <textarea
-              name="message"
-              placeholder="How can we help you?"
-              className="contact-input contact-textarea"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
+              <div className="info-item">
+                <h4>Email</h4>
+                <p>carrent@hotmail.com</p>
+              </div>
 
-            <button type="submit" className="contact-btn">
-              Send Message
-            </button>
-          </form>
+              <div className="info-item">
+                <h4>Phone</h4>
+                <p>+91 9876543210</p>
+              </div>
 
-          {/* Social Links */}
-          <div className="contact-socials">
-            <a href="#" className="https://x.com/sadyalnikhil/">Twitter</a>
-            <a href="#" className="https://www.linkedin.com/in/nikhil-sadyal-141036221/">LinkedIn</a>
-            <a href="#" className="https://www.instagram.com/nikhil_transition/">Instagram</a>
+              <div className="info-item">
+                <h4>Location</h4>
+                <p>Delhi, India</p>
+              </div>
+
+              <div className="socials">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+              </div>
+
+            </div>
+
+            {/* RIGHT FORM */}
+            <div className="form-box">
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
+
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+
           </div>
 
         </div>
