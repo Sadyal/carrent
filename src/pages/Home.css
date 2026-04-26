@@ -303,7 +303,7 @@
   }
 }
 
-/* Small phone adjustments */
+/* Small phone adjustments for better Visuals */
 @media (max-width: 480px) {
   .hero-text h1 {
     letter-spacing: 0.1em;
